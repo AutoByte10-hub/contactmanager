@@ -1,10 +1,25 @@
+import json 
+
 contacts = []  # tady se budou ukládat kontakty jako slovníky
+
+def save_contacts():
+    with open("contacts.json", "w") as f:
+        json.dump(contacts, f)
+
+def load_contacts():
+    global contacts
+    try:
+        with open("contacts.json", "r") as f:
+            contacts = json.load(f)
+    except FileNotFoundError:
+        contacts = []
 
 def add_contact():
     name = input("Enter name: ")
     phone = input("Enter phone number: ")
     contacts.append({"name": name, "phone": phone})
     print(f"Contact {name} added.")
+    save_contacts ()
 
 def view_contacts():
     if not contacts:
@@ -21,6 +36,7 @@ def delete_contact():
             print(f"Contact {name} deleted.")
             return
     print("Contact not found.")
+    save_contacts()
 
 def edit_contact():
     name = input("Enter the name to edit: ")
@@ -60,5 +76,5 @@ def menu():
             break
         else:
             print("Invalid choice.")
-
+load_contacts()
 menu()
