@@ -1,6 +1,8 @@
 def calc_bmi (weight,height):
     bmi = weight/ (height **2)
-    if bmi < 18.5:
+    if bmi <16.5:
+        return f"BMI {bmi:.1f} → Tezka podvaha"
+    elif bmi < 18.5:
         return f"BMI {bmi:.1f} → Podvaha"
     elif bmi < 25:
         return f"BMI {bmi:.1f} → Normalni"
@@ -8,7 +10,11 @@ def calc_bmi (weight,height):
         return f"BMI {bmi:.1f} → Nadvaha"
     else:
         return f"BMI {bmi:.1f} → Obezita"
+def greet_and_bmi(name, weight,height):
+    print ("Nazdar, " + name + "!")
+    print (calc_bmi(weight, height))
 
-print(calc_bmi(60, 1.70))
-print(calc_bmi(90, 1.80))
+
+greet_and_bmi ("Marek",60, 1.70)
+greet_and_bmi ("Adam" ,90, 1.80)
     
