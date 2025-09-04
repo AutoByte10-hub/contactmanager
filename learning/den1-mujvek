@@ -1,0 +1,3 @@
+vek=15
+roky=5
+print("Za 5 let mi bude" + str(vek+roky))

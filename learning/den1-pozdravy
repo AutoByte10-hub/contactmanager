@@ -1,0 +1,5 @@
+def Pozdrav (jmeno):
+    print("Nazdar, " + jmeno + "!")
+Pozdrav ("Adam")
+Pozdrav ("Tatka")
+Pozdrav ("Mamka")
