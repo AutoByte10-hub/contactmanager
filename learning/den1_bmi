@@ -1,0 +1,14 @@
+def calc_bmi (weight,height):
+    bmi = weight/ (height **2)
+    if bmi < 18.5:
+        return f"BMI {bmi:.1f} → Podvaha"
+    elif bmi < 25:
+        return f"BMI {bmi:.1f} → Normalni"
+    elif bmi < 30: 
+        return f"BMI {bmi:.1f} → Nadvaha"
+    else:
+        return f"BMI {bmi:.1f} → Obezita"
+
+print(calc_bmi(60, 1.70))
+print(calc_bmi(90, 1.80))
+    
